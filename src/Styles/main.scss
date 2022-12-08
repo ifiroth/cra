@@ -1,0 +1,51 @@
+.wrapper {
+
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 1rem;
+
+    main {
+        color: white;
+        display: flex;
+        height: 40px;
+        gap: 1.5rem;
+        flex-flow: column nowrap;
+        border-radius: 5px;
+
+        @media (min-width: 768px) {
+            flex-flow: row nowrap;
+        }
+    }
+
+    .button {
+        color: white;
+        padding: .5rem 1.5rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        cursor: pointer;
+        transition: .2s all linear;
+
+        &:hover {
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            filter: brightness(1.2);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.toast {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    text-align: right;
+
+    padding: .5rem 1.5rem;
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+}

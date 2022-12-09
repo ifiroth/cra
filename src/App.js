@@ -52,7 +52,10 @@ function App() {
   const handleCloseWarning = () => setShowWarning(false)
   const handleCloseDanger = () => setShowDanger(false)
 
+  const button = (id) => { return buttons.find(({ label }) => label === id)}
+
   const toggleVisibility = (event) => {
+
     switch (event.target.id) {
       case "Info": setShowInfo(!showInfo); break
       case "Success": setShowSuccess(!showSuccess); break
@@ -64,35 +67,41 @@ function App() {
 
   return (
     <>
-      {showInfo
-        ? <Toast
-          alertType="Info"
-          onClose={handleCloseInfo}
-        />
-        : null
-      }
-      {showSuccess
-        ? <Toast
-          alertType="Success"
-          onClose={handleCloseSuccess}
-        />
-        : null
-      }
-      {showWarning
-        ? <Toast
-          alertType="Warning"
-          onClose={handleCloseWarning}
-        />
+      <div className="toast-wrapper">
+        {showInfo
+          ? <Toast
+            type="Info"
+            onClose={handleCloseInfo}
+            button={{...button("Info")}}
+          />
+          : null
+        }
+        {showSuccess
+          ? <Toast
+            type="Success"
+            onClose={handleCloseSuccess}
+            button={{...button("Success")}}
+          />
+          : null
+        }
+        {showWarning
+          ? <Toast
+            type="Warning"
+            onClose={handleCloseWarning}
+            button={{...button("Warning")}}
+          />
 
-        : null
-      }
-      {showDanger
-        ? <Toast
-          alertType="Danger"
-          onClose={handleCloseDanger}
-        />
-        : null
-      }
+          : null
+        }
+        {showDanger
+          ? <Toast
+            type="Danger"
+            onClose={handleCloseDanger}
+            button={{...button("Danger")}}
+          />
+          : null
+        }
+      </div>
       <section className="App wrapper">
         <header><h2>Quelle alerte voulez-vous faire apparaitre ?</h2></header>
         <main>
@@ -102,8 +111,8 @@ function App() {
                    css={{ ...button.css }}
                    key={key}
                    label={button.label}
-                   id={button.label}
-                   onClick={() => {toggleVisibility()}}
+                   button={{ ...button }}
+                   onClick={toggleVisibility}
               />
             )
           } ) }

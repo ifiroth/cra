@@ -61,7 +61,7 @@ function App() {
       case "Success": setShowSuccess(!showSuccess); break
       case "Warning": setShowWarning(!showWarning); break
       case "Danger": setShowDanger(!showDanger); break
-      default: setShowInfo(!showInfo)
+      default: break;
     }
   }
 

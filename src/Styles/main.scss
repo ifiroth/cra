@@ -1,3 +1,8 @@
+$color-info: #457EAC;
+$color-danger: #D00000;
+$color-warning: #FFC000;
+$color-success: #55A630;
+
 .wrapper {
 
     position: absolute;
@@ -52,10 +57,33 @@
         padding: .5rem 1.5rem;
         padding-right: .25rem;
 
-        border-width: 2px;
+        border-width: 1px;
         border-style: solid;
         border-radius: 5px;
 
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+        animation: .2s linear appear;
+
+        &.info {
+            border-color: $color-info;
+            background-color: adjust-color($color-info, $alpha: -0.4);
+        }
+
+        &.warning {
+            border-color: $color-warning;
+            background-color: adjust-color($color-warning, $alpha: -0.4);
+        }
+
+        &.danger {
+            border-color: $color-danger;
+            background-color: adjust-color($color-danger, $alpha: -0.4);
+        }
+
+        &.success {
+            border-color: $color-success;
+            background-color: adjust-color($color-success, $alpha: -0.4);
+        }
 
         .close-cross {
             cursor: pointer;
@@ -67,5 +95,17 @@
                 filter: brightness(.8);
             }
         }
+    }
+}
+
+@keyframes appear {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 100%;
     }
 }

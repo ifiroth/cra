@@ -1,1 +1,75 @@
+#root {
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    text-decoration: underline;
 
+    &+p {
+      font-style: italic;
+      margin: 1.5rem 0;
+      text-indent: 1rem;
+    }
+  }
+}
+
+.card-wrapper {
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .card {
+
+    box-shadow:
+      rgba(0, 0, 0, 0.16) 0 3px 6px,
+      rgba(0, 0, 0, 0.23) 0 3px 6px;
+    padding: 2rem;
+  }
+}
+
+#inputs {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+
+  .field-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    label {
+      margin-right: auto;
+    }
+
+    input {
+      max-width: 80px;
+    }
+
+    .input-unit {
+      width: 10px;
+    }
+  }
+}
+
+#results {
+
+  .result-list {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style: none;
+    padding: 0;
+    gap: 1rem;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+}

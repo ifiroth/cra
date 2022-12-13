@@ -3,7 +3,7 @@ import store from "../../store";
 import fields from "../Inputs/fields";
 import results from "./results";
 
-const Result = string => {
+const Result = () => {
   /* Initialize store with outputs and inputs */
 
   const [inputs, setInputs] = useState(fields);
@@ -39,7 +39,7 @@ const Result = string => {
     outputs[k].value = eval(item.formula.map(term => getData(term)).join(' '))
     outputs[k].isCritical = outputs[k].value <= item.critical
     console.log(outputs[k])
-    return [outputs[k].value.toFixed(item.dec), item.unit].join(' ')
+    return [outputs[k].value.toLocaleString('fr', {maximumFractionDigits: item.dec}), item.unit].join(' ')
   }
 
   /* Prints Outcome */

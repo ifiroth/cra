@@ -22,7 +22,7 @@ const fields = [
       max: 100,
     },
     unit: '%',
-    type: 'int',
+    type: 'dec',
   },
   {
     label: 'Taux de conversion',

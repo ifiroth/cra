@@ -17,13 +17,16 @@ function App() {
           <h2>Résultat</h2>
           <Result/>
         </section>
-        <section className={"card"}>
+        <section className={"card"} id={"features"}>
           <h2>Améliorations</h2>
           <ul>
             <li>Graphique de l'évolution du ROI en fonctions du Tx de marge</li>
             <li>Graphique de l'évolution du ROI en fonctions du Tx de conversion</li>
             <li>Graphique de l'évolution du ROI en fonctions du Panier moyen</li>
             <li>Idem pour le ROAS</li>
+            <li>Swipe des différents graphiques</li>
+            <li>Envoi de mails avec les statistiques</li>
+            <li>Souscrire aux données</li>
           </ul>
         </section>
       </div>

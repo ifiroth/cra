@@ -38,7 +38,6 @@ const Result = () => {
     // TODO: remove eval with homemade stuff
     outputs[k].value = eval(item.formula.map(term => getData(term)).join(' '))
     outputs[k].isCritical = outputs[k].value <= item.critical
-    console.log(outputs[k])
     return [outputs[k].value.toLocaleString('fr', {maximumFractionDigits: item.dec}), item.unit].join(' ')
   }
 

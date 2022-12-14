@@ -1,5 +1,5 @@
-import './App.css';
-import './Styles/main.scss'
+import './assets/App.css';
+import './assets/main.scss'
 
 function App() {
   return (

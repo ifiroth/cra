@@ -1,3 +1,6 @@
+
+export const selectGameIsPlaying = state => state.playing
+
 export const selectPlayerHasAdvantage = (playerId) => {
   return (state) => state.advantage === playerId
 }
